@@ -11,7 +11,7 @@
          */
         function constant() {
             return {
-                'apiURL': 'http://xx'
+                'firebaseURL': 'https://europa-app.firebaseio.com/'
             };
         }
 
