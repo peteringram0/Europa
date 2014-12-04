@@ -3,13 +3,13 @@
 
     angular
         .module('app.directive')
-        .directive('header', header);
+        .directive('leftBar', leftBar);
     
-    function header() {
+    function leftBar() {
 		
         var directive = {
             link: link,
-            templateUrl: 'global/headerDirective/header.tpl.html',
+            templateUrl: 'global/leftBarDirective/leftbar.tpl.html',
             restrict: 'EA'
         };
 
@@ -21,7 +21,6 @@
             var vm = scope; 
 
             
-
         }
 
     }
