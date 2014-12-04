@@ -25,6 +25,13 @@
             templateUrl: 'page1/page1.tpl.html'
         });
 
+        $stateProvider.state('wrapper.home', {
+            url: '/home',
+          //  controller: 'page1 as page1',
+           // templateUrl: 'page1/page1.tpl.html'
+            template: 'Home'
+        });
+
         $stateProvider.state("otherwise", { 
             url : '/',
             templateUrl: 'wrapper/wrapper.tpl.html'

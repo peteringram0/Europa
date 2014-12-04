@@ -190,7 +190,7 @@ gulp.task('concatbower', function(){
  * Runs the clean task first then runs everything needed to build up that target directory
  */
 gulp.task('everything', ['clean'], function() {
-  gulp.start('concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts', 'firebase');
+  gulp.start('htaccess', 'concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts', 'firebase');
 });
 
 /**
