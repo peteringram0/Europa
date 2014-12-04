@@ -1,8 +1,11 @@
 /* app css stylesheet */
 
+html,body,
+{
+    height:100%;
+}
 .wrap {
 
-    max-width: 1000px;
     margin: 0 auto;
 
     p {
@@ -26,6 +29,28 @@
 
 }
 
-.profilePic {
-    border-radius: 100px;
+#sidebar{
+
+    z-index: 100;
+
+    .profilePic {
+        border-radius: 100px;
+    }
+}
+
+.row{
+    display: table;
+}
+.left-side {
+ 
+    float: none;
+    display: table-cell;
+
+}
+
+.right-side {
+
+    float: none;
+    display: table-cell;
+
 }

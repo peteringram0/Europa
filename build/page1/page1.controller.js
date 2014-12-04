@@ -5,7 +5,7 @@
         .module('app.controllers')
         .controller('page1', page1);
 
-	page1.$injector = ['$firebase', 'config', 'parallaxHelper']
+	page1.$injector = ['$firebase', 'config', 'parallaxHelper'];
 
     function page1($firebase, config, parallaxHelper) {
 		
@@ -27,10 +27,10 @@
 				title: 'Post title',
 				conent: 'Post content',
 				date: Firebase.ServerValue.TIMESTAMP
-			}
+			};
 
 			sync.$push(postData);
-		}
+		};
 
 
     }

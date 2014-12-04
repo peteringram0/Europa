@@ -167,6 +167,14 @@ gulp.task('images', function(){
 });
 
 /**
+ * Move firebase config file to dist for firebase hosting deployments
+ */
+gulp.task('firebase', function(){
+  gulp.src('./build/firebase.json')
+    .pipe(gulp.dest(target));
+});
+
+/**
  * gets all the bower files (From the bower.json list), excluding any that are specified within bower.json
  * and concatanates them all into a vendor.js file.
  */
@@ -182,7 +190,7 @@ gulp.task('concatbower', function(){
  * Runs the clean task first then runs everything needed to build up that target directory
  */
 gulp.task('everything', ['clean'], function() {
-  gulp.start('htaccess', 'concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts');
+  gulp.start('concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts', 'firebase');
 });
 
 /**
