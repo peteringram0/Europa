@@ -10,7 +10,8 @@
             'ngLodash',
             'ui.router',
             'partials',
-            'ngStorage'
+            'ngStorage',
+            'firebase'
         ]);
 
     angular.module('app.constant', []);
