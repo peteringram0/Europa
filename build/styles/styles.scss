@@ -33,7 +33,9 @@ html,body{
 #sidebar {
     z-index: 100;
     .profilePic {
-        border-radius: 100px;
+        border-radius: 500px;
+        width:100%;
+        max-width: 200px
     }
 }
 
