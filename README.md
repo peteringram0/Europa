@@ -1,4 +1,4 @@
 Europa
 ======
 
-Blogging platform created with AngualrJS, Firebase &amp; MaterializeCSS
+Blogging platform created with AngualrJS, Firebase &amp; Bootstrap
