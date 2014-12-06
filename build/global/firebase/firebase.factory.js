@@ -6,19 +6,22 @@
         .factory('fireBaseFactory', fireBaseFactory);
 
 
-    fireBaseFactory.$inject = ['$firebase', 'config', '$http'];
+    fireBaseFactory.$inject = ['$firebase', '$firebaseAuth', 'config', '$http'];
 
     /**
      * This factory is responsable for all firebase interaction
      * 
      * @author Peter Ingram <peter.ingram0@gmail.com>
      */
-    function fireBaseFactory($firebase, config, $http) {
+    function fireBaseFactory($firebase, $firebaseAuth, config, $http) {
 
         var service = {
             getMenu: getMenu,
             getPosts: getPosts,
-            dbSeed: dbSeed
+            dbSeed: dbSeed,
+            login: login,
+            logout: logout,
+            checkStatus: checkStatus
         };
 
         return service;
@@ -51,6 +54,29 @@
                 sync.$set(data);
             });
             return true;
+        }
+
+        function login(credentials) {
+            var ref = new Firebase(config.firebaseURL);
+          //  var authObj = $firebaseAuth(ref);
+            $firebaseAuth(ref).$authWithPassword({
+              email: credentials.email,
+              password: credentials.password
+            }).then(function(authData) {
+              console.log("Logged in as:", authData.uid);
+            }).catch(function(error) {
+              console.error("Authentication failed:", error);
+            });
+        }
+
+        function logout() {
+            var ref = new Firebase(config.firebaseURL);
+            ref.unauth();
+        }
+
+        function checkStatus() {
+          var ref = new Firebase(config.firebaseURL);
+          return ref.getAuth();
         }
         
     }

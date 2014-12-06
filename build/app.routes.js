@@ -27,6 +27,9 @@
         });
 
         $stateProvider.state('wrapper.admin', {
+            resolve: {
+                checkLogin: isLoggedIn // function that returns a promise
+            },
             url: '/e-admin',
             controller: 'admin as admin',
             templateUrl: 'admin/admin.tpl.html'
@@ -39,5 +42,12 @@
         });
 
     }
+
+    var isLoggedIn = function(fireBaseFactory) {  
+        var status = fireBaseFactory.checkStatus();
+        if(status === null){
+            $state.go('/');
+        }
+    };
 
 })();
