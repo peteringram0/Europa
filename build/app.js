@@ -8,6 +8,7 @@
 			'app.controllers',
             'app.constant',
             'app.directive',
+            'app.filters',
             'app.config',
             'ngLodash',
             'ui.router',
@@ -17,10 +18,13 @@
             'ui.bootstrap',
             'duScroll',
             'duParallax',
-            'ui.gravatar'
+            'ui.gravatar',
+            'ngSanitize', // Needed for textAngular
+            'textAngular'
         ]);
 
-    angular.module('app.config', ['ui.gravatar']);
+    angular.module('app.filters', []);
+    angular.module('app.config', ['ui.gravatar', 'textAngular']);
     angular.module('app.constant', []);
     angular.module('app.routes', ['ui.router']);
     angular.module('app.factory', ['ngResource']);

@@ -170,7 +170,12 @@ gulp.task('images', function(){
  * Move firebase config file to dist for firebase hosting deployments
  */
 gulp.task('firebase', function(){
+  // Move over config file
   gulp.src('./build/firebase.json')
+    .pipe(gulp.dest(target));
+
+  // move over db seed file
+  gulp.src('./firebase_seed.json')
     .pipe(gulp.dest(target));
 });
 

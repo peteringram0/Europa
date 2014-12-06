@@ -19,10 +19,10 @@
             templateUrl: 'wrapper/wrapper.tpl.html'
         });
 
-        $stateProvider.state('wrapper.page1', {
-            url: '/page1',
-            controller: 'page1 as page1',
-            templateUrl: 'page1/page1.tpl.html'
+        $stateProvider.state('wrapper.posts', {
+            url: '/posts',
+            controller: 'posts as posts',
+            templateUrl: 'posts/posts.tpl.html'
         });
 
         $stateProvider.state('wrapper.home', {
@@ -30,6 +30,12 @@
           //  controller: 'page1 as page1',
            // templateUrl: 'page1/page1.tpl.html'
             template: 'Home'
+        });
+
+        $stateProvider.state('wrapper.admin', {
+            url: '/e-admin',
+            controller: 'admin as admin',
+            templateUrl: 'admin/admin.tpl.html'
         });
 
         $stateProvider.state("otherwise", { 
