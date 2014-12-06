@@ -5,9 +5,9 @@
         .module('app.controllers')
         .controller('admin', admin);
 
-	admin.$inject = ['$scope', '$firebase', 'config', '$http'];
+	admin.$inject = ['fireBaseFactory', 'SweetAlert'];
 
-    function admin($scope,$firebase,config,$http) {
+    function admin(fireBaseFactory, SweetAlert) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -18,11 +18,10 @@
 		 * @return {[type]} [description]
 		 */
 		vm.dbseed = function() {
-			var ref = new Firebase(config.firebaseURL);
-			var sync = $firebase(ref);
-			$http.get('/firebase_seed.json').success (function(data){
-				sync.$set(data);
-			});
+			var seedDB = fireBaseFactory.dbSeed();
+			if(seedDB === true) {
+				SweetAlert.swal("Database Seed", "completed", "success");
+			}
 		};
 
     }

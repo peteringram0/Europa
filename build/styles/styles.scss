@@ -16,7 +16,6 @@ html,body{
         background: white;
         z-index: 1;
         padding: 100px 20px;
-        text-align: left;
     }
     img{
         position: relative;
@@ -27,11 +26,13 @@ html,body{
     h1 {
         padding: 0 20px;
         font-size: 30px;
+        text-align: center;
     }
 }
 
 #sidebar {
     z-index: 100;
+    text-align: center;
     .profilePic {
         border-radius: 500px;
         width:100%;

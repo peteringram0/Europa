@@ -8,6 +8,9 @@
     function leftBar() {
 		
         var directive = {
+            scope: {
+                menu: '='
+            },
             link: link,
             templateUrl: 'global/leftBarDirective/leftbar.tpl.html',
             restrict: 'EA'
@@ -19,6 +22,8 @@
 
             /* jshint validthis: true */
             var vm = scope; 
+
+            vm.menu = scope.menu;
 
             
         }

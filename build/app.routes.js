@@ -16,6 +16,7 @@
         $locationProvider.html5Mode(true);
         
         $stateProvider.state('wrapper', {
+            controller: 'wrapper as wrapper',
             templateUrl: 'wrapper/wrapper.tpl.html'
         });
 
@@ -23,13 +24,6 @@
             url: '/posts',
             controller: 'posts as posts',
             templateUrl: 'posts/posts.tpl.html'
-        });
-
-        $stateProvider.state('wrapper.home', {
-            url: '/home',
-          //  controller: 'page1 as page1',
-           // templateUrl: 'page1/page1.tpl.html'
-            template: 'Home'
         });
 
         $stateProvider.state('wrapper.admin', {
@@ -40,6 +34,7 @@
 
         $stateProvider.state("otherwise", { 
             url : '/',
+            controller: 'wrapper as wrapper',
             templateUrl: 'wrapper/wrapper.tpl.html'
         });
 

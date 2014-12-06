@@ -20,7 +20,8 @@
             'duParallax',
             'ui.gravatar',
             'ngSanitize', // Needed for textAngular
-            'textAngular'
+            'textAngular',
+            'oitozero.ngSweetAlert'
         ]);
 
     angular.module('app.filters', []);
@@ -28,7 +29,7 @@
     angular.module('app.constant', []);
     angular.module('app.routes', ['ui.router']);
     angular.module('app.factory', ['ngResource']);
-    angular.module('app.controllers', []);
+    angular.module('app.controllers', ['oitozero.ngSweetAlert']);
     angular.module('app.directive', []);
 
 })();

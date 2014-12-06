@@ -79,6 +79,7 @@ gulp.task('vendorstyles', function() {
       includePaths: [
         bower + '/bootstrap-sass-official/assets/stylesheets',
         bower + '/fontawesome/scss',
+        bower + '/sweetalert/lib',
       ]
     }))
     .on('error', notify.onError(function(error){
@@ -148,7 +149,7 @@ gulp.task('html',function(){
     .pipe(gulp.dest("./dist/partials"))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest("./dist/partials"))
+    .pipe(gulp.dest("./dist/partials"));
 
   /**
    * Move the main index.html page
@@ -207,6 +208,7 @@ gulp.task('watch', ['browser-sync'], function(){
   gulp.watch('build/**/*.js', ['scripts', browserSync.reload]);
   gulp.watch('build/images/**/*.*', ['images', browserSync.reload]);
   gulp.watch('build/**/*.html', ['html', browserSync.reload]);
+  gulp.watch('./firebase_seed.json', ['firebase', browserSync.reload]);
 });
 
 /**

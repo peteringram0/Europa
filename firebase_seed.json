@@ -3,11 +3,14 @@
     "email" : "peter.ingram0@gmail.com"
   },
   "menu" : [ {
-    "location" : "/home",
-    "title" : "home"
-  }, {
     "location" : "/posts",
-    "title" : "posts"
+    "title" : "Posts",
+    "class" : "fa fa-comments"
+  },
+  {
+    "location" : "/e-admin",
+    "title" : "Admin",
+    "class" : "fa fa-user"
   } ],
   "posts" : {
     "-JcR97B7iVXje2bc6O4z" : {
