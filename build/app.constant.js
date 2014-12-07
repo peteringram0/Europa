@@ -11,7 +11,8 @@
          */
         function constant() {
             return {
-                'firebaseURL': 'https://europa-app.firebaseio.com/'
+                firebaseURL: 'https://europa-app.firebaseio.com/',
+                email: 'peter.ingram0@gmail.com'
             };
         }
 

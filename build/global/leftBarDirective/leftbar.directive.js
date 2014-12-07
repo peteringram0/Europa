@@ -5,7 +5,15 @@
         .module('app.directive')
         .directive('leftBar', leftBar);
     
-    function leftBar() {
+    leftBar.$inject = ['config'];
+
+    /**
+     * The left bar is used as a blog default. This is responsable for the left bar of the page
+     * This contains the users gravatar image and menu bar.
+     * 
+     * @author Peter Ingram <peter.ingram0@gmail.com>
+     */
+    function leftBar(config) {
 		
         var directive = {
             scope: {
@@ -18,14 +26,11 @@
 
         return directive;
 
+        /**
+         * Link function
+         */
         function link(scope, element, attrs) {
-
-            /* jshint validthis: true */
-            var vm = scope; 
-
-            vm.menu = scope.menu;
-
-            
+            scope.email = config.email;
         }
 
     }

@@ -16,9 +16,17 @@
     function fireBaseFactory($firebase, $firebaseAuth, config, $http) {
 
         var service = {
+            // Site
             getMenu: getMenu,
+
+            // Posts
             getPosts: getPosts,
+            publishPost: publishPost,
+
+            // Admin
             dbSeed: dbSeed,
+
+            // Auth
             login: login,
             logout: logout,
             checkStatus: checkStatus
@@ -45,6 +53,23 @@
         }
 
         /**
+         * Send the new post to firebase to be stored
+         */
+        function publishPost(post) {
+            var ref = new Firebase(config.firebaseURL+'/posts');
+            var sync = $firebase(ref);
+            var obj = sync.$asArray();
+
+            var testObj = {
+                title: post.title,
+                content: post.content,
+                date: Firebase.ServerValue.TIMESTAMP
+            };
+
+            obj.$add(testObj);
+        }
+
+        /**
          * Seed the database with test data in the firebase_seed.json file
          */
         function dbSeed() {
@@ -58,14 +83,9 @@
 
         function login(credentials) {
             var ref = new Firebase(config.firebaseURL);
-          //  var authObj = $firebaseAuth(ref);
-            $firebaseAuth(ref).$authWithPassword({
-              email: credentials.email,
-              password: credentials.password
-            }).then(function(authData) {
-              console.log("Logged in as:", authData.uid);
-            }).catch(function(error) {
-              console.error("Authentication failed:", error);
+            return $firebaseAuth(ref).$authWithPassword({
+                email: credentials.email,
+                password: credentials.password
             });
         }
 
@@ -82,3 +102,17 @@
     }
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+

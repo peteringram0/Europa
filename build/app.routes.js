@@ -9,6 +9,7 @@
 
     /**
      * Routing function
+     * 
      * @author Peter Ingram <peter.ingram0@gmail.com>
      */
     function Routing($stateProvider, $locationProvider){
@@ -43,6 +44,12 @@
 
     }
 
+    /**
+     * This function will check if the user is logged into firebase. If they are not it will send them to
+     * default route
+     * 
+     * @author Peter Ingram <peter.ingram0@gmail.com>
+     */
     var isLoggedIn = function(fireBaseFactory) {  
         var status = fireBaseFactory.checkStatus();
         if(status === null){
