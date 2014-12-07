@@ -5,9 +5,9 @@
         .module('app.controllers')
         .controller('wrapper', wrapper);
 
-	wrapper.$inject = ['fireBaseFactory', '$modal', '$state'];
+	wrapper.$inject = ['fireBaseFactory', '$modal', '$state', 'SweetAlert'];
 
-    function wrapper(fireBaseFactory, $modal, $state) {
+    function wrapper(fireBaseFactory, $modal, $state, SweetAlert) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -26,6 +26,7 @@
 
 		vm.logout = function() {
 			 fireBaseFactory.logout();
+			 SweetAlert.swal("Logged Out", "You have now been logged out", "success");
 			 $state.go('otherwise');
 		};
 
