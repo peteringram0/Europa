@@ -5,15 +5,21 @@
         .module('app.controllers')
         .controller('posts', posts);
 
-	posts.$inject = ['$scope', 'parallaxHelper', 'fireBaseFactory'];
+	posts.$inject = ['parallaxHelper', 'fireBaseFactory', '$compile'];
 
-    function posts($scope, parallaxHelper, fireBaseFactory) {
+    function posts(parallaxHelper, fireBaseFactory, $compile) {
 		
 		/* jshint validthis: true */
 		var vm = this;
 
+		/**
+		 * In posts if people say posts.background this will get applied
+		 */
 		vm.background = parallaxHelper.createAnimator(-0.3);
 
+		/**
+		 * Load in the posts
+		 */
 		vm.posts = fireBaseFactory.getPosts();
 
     }
