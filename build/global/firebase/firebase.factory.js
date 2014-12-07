@@ -83,14 +83,9 @@
 
         function login(credentials) {
             var ref = new Firebase(config.firebaseURL);
-          //  var authObj = $firebaseAuth(ref);
-            $firebaseAuth(ref).$authWithPassword({
-              email: credentials.email,
-              password: credentials.password
-            }).then(function(authData) {
-              console.log("Logged in as:", authData.uid);
-            }).catch(function(error) {
-              console.error("Authentication failed:", error);
+            return $firebaseAuth(ref).$authWithPassword({
+                email: credentials.email,
+                password: credentials.password
             });
         }
 
@@ -107,3 +102,17 @@
     }
 
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,4 @@
 {
-  "config" : {
-    "email" : "peter.ingram0@gmail.com"
-  },
   "menu" : [ {
     "location" : "/posts",
     "title" : "Posts",
