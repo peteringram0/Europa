@@ -1,0 +1,14 @@
+<div id="sidebar">
+
+	<img class="profilePic hidden-xs" gravatar-src="'peter.ingram0@gmail.com'">
+
+	<ul class="nav nav-pills nav-stacked">
+		<li ng-repeat="item in menu">
+			<a href="{{item.location}}">
+				<i class="{{item.class}}"></i>
+				<span>{{item.title}}</span>
+			</a>
+		</li>
+	</ul>
+
+</div>

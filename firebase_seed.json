@@ -1,0 +1,22 @@
+{
+  "config" : {
+    "email" : "peter.ingram0@gmail.com"
+  },
+  "menu" : [ {
+    "location" : "/posts",
+    "title" : "Posts",
+    "class" : "fa fa-comments"
+  },
+  {
+    "location" : "/e-admin",
+    "title" : "Admin",
+    "class" : "fa fa-user"
+  } ],
+  "posts" : {
+    "-JcR97B7iVXje2bc6O4z" : {
+      "conent" : "<h1>POST TITLE</h1>    <p>Bacon ipsum dolor sit amet sausage tail capicola ground round hamburger ham hock. Short ribs pig andouille meatball, pastrami tri-tip fatback ham hock shank kielbasa swine. Rump pancetta jerky kielbasa doner beef ribs tongue hamburger strip steak drumstick andouille shoulder shank flank. Swine drumstick meatball pig beef sausage strip steak.</p>    <img src=\"http://lorempixel.com/1000/800/\" alt=\"\" du-parallax y=\"posts.background\" />    <p>Bacon strip steak ground round, tongue pastrami short ribs pork chop venison turducken sausage sirloin. Flank chicken pork chop capicola turkey turducken cow pork loin biltong meatball drumstick pancetta filet mignon ground round fatback. Ham hock jerky short ribs brisket. Meatloaf shoulder pork chop capicola, sirloin swine pig pork. Jerky ribeye hamburger pork loin sirloin kevin bresaola boudin chuck flank. Ham hock pork belly chicken jerky rump bresaola.</p>    <img src=\"http://lorempixel.com/1000/801/\" alt=\"\" du-parallax y=\"posts.background\" />    <p>Shank fatback pastrami short loin, turkey jowl kielbasa ribeye chicken jerky drumstick flank ham. Swine shankle pork belly kielbasa shoulder flank jowl, sirloin doner. Kevin tri-tip bresaola leberkas. Swine ball tip cow strip steak. Ham filet mignon pork chop, pork fatback andouille pork loin shoulder jowl swine strip steak turducken prosciutto rump.</p>",
+      "date" : 1417811626798,
+      "title" : "Post title"
+    }
+  }
+}
