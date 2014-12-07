@@ -17,7 +17,10 @@
 		
         var directive = {
             scope: {
-                menu: '='
+                menu: '=',
+                login: '&',
+                logout: '&',
+                authStatus: '='
             },
             link: link,
             templateUrl: 'global/leftBarDirective/leftbar.tpl.html',
@@ -31,6 +34,16 @@
          */
         function link(scope, element, attrs) {
             scope.email = config.email;
+
+
+            scope.loginFun = function(){
+                scope.login();
+            };
+
+            scope.logoutFun = function(){
+                scope.logout();
+            };
+
         }
 
     }

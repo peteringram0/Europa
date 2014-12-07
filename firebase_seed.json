@@ -3,11 +3,6 @@
     "location" : "/posts",
     "title" : "Posts",
     "class" : "fa fa-comments"
-  },
-  {
-    "location" : "/e-admin",
-    "title" : "Admin",
-    "class" : "fa fa-user"
   } ],
   "posts" : {
     "-JcR97B7iVXje2bc6O4z" : {

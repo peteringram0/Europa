@@ -9,6 +9,13 @@
 				<span>{{item.title}}</span>
 			</a>
 		</li>
+
+		<li ng-if="authStatus === false" ng-click="loginFun()"><a href="#"><i class="fa fa-key"></i> <span>Login</span></a></li>
+
+		<li ng-if="authStatus === true"><a href="/e-admin"><i class="fa fa-user"></i> <span>Admin</span></a></li>
+
+		<li ng-if="authStatus === true" ng-click="logoutFun()"><a href="#"><i class="fa fa-lock"></i> <span>Logout</span></a></li>
+
 	</ul>
 
 </div>

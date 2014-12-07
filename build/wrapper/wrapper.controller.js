@@ -17,9 +17,11 @@
 		 */
 		vm.menu = fireBaseFactory.getMenu();
 
+		vm.status = fireBaseFactory.checkStatus();
+
 		vm.authModal = function() {
 			var modalInstance = $modal.open({
-		    	templateUrl: 'wrapper/auth.tpl.html',
+		    	templateUrl: 'wrapper/auth/auth.tpl.html',
 		      	controller: 'authController',
 		    });
 		};

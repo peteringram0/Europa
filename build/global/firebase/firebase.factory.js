@@ -95,8 +95,13 @@
         }
 
         function checkStatus() {
-          var ref = new Firebase(config.firebaseURL);
-          return ref.getAuth();
+            var ref = new Firebase(config.firebaseURL);
+
+            if(ref.getAuth() !== null) {
+                return true;
+            } else {
+                return false;
+            }
         }
         
     }
