@@ -16,9 +16,17 @@
     function fireBaseFactory($firebase, $firebaseAuth, config, $http) {
 
         var service = {
+            // Site
             getMenu: getMenu,
+
+            // Posts
             getPosts: getPosts,
+            publishPost: publishPost,
+
+            // Admin
             dbSeed: dbSeed,
+
+            // Auth
             login: login,
             logout: logout,
             checkStatus: checkStatus
@@ -42,6 +50,23 @@
             var ref = new Firebase(config.firebaseURL+'/posts');
             var sync = $firebase(ref);
             return sync.$asObject();
+        }
+
+        /**
+         * Send the new post to firebase to be stored
+         */
+        function publishPost(post) {
+            var ref = new Firebase(config.firebaseURL+'/posts');
+            var sync = $firebase(ref);
+            var obj = sync.$asArray();
+
+            var testObj = {
+                title: post.title,
+                content: post.content,
+                date: Firebase.ServerValue.TIMESTAMP
+            };
+
+            obj.$add(testObj);
         }
 
         /**

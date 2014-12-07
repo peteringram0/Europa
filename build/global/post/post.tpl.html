@@ -1,0 +1,12 @@
+
+<input type="text" class="form-control" placeholder="Post Title" ng-model="post.title" required>
+
+<br/>
+
+<div style="text-align:left"> 
+    <text-angular ng-model="post.content" ta-toolbar="[['h1','h2','h3'],['bold','italics','quote'],['undo','redo'],['justifyLeft','justifyCenter','justifyRight'],['insertImage','insertLink','insertVideo'],['html']]"></text-angular>
+</div>
+
+<br/>
+
+<button type="button" class="btn btn-primary" ng-click="submitPost()">Publish Post!</button>

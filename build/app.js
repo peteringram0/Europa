@@ -1,6 +1,9 @@
 (function() {
     'use strict';
 
+    /**
+     * Lets define everything
+     */
     angular
         .module('app', [
             'app.routes',
@@ -19,11 +22,14 @@
             'duScroll',
             'duParallax',
             'ui.gravatar',
-            'ngSanitize', // Needed for textAngular
+            'ngSanitize',
             'textAngular',
             'oitozero.ngSweetAlert'
         ]);
 
+    /**
+     * Envoke all our function
+     */
     angular.module('app.filters', []);
     angular.module('app.config', ['ui.gravatar', 'textAngular']);
     angular.module('app.constant', []);
