@@ -24,7 +24,8 @@
             'ui.gravatar',
             'ngSanitize',
             'textAngular',
-            'oitozero.ngSweetAlert'
+            'oitozero.ngSweetAlert',
+            'sticky'
         ]);
 
     /**
