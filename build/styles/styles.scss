@@ -5,6 +5,7 @@ html,body{
 }
 
 .container-fluid {
+	margin: -1px;
     min-height:100%;
     overflow: hidden;
     padding-left:0px;
@@ -40,6 +41,9 @@ html,body{
         max-width: 200px;
         margin-bottom: 30px;
     }
+    position: fixed;
+width: inherit;
+padding-right: 40px;
 }
 
 .fix {
@@ -74,4 +78,10 @@ html,body{
   z-index: 1030;
   background-color: black;
   opacity:0.2; 
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+	color: #FFF; 
+	background-color: #286090;
+	border-color: #204D74;
 }

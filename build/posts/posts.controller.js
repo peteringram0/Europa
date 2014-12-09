@@ -1,13 +1,13 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.controllers')
-        .controller('posts', posts);
+	angular
+		.module('app.controllers')
+		.controller('posts', posts);
 
 	posts.$inject = ['parallaxHelper', 'fireBaseFactory', '$compile'];
 
-    function posts(parallaxHelper, fireBaseFactory, $compile) {
+	function posts(parallaxHelper, fireBaseFactory, $compile) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -22,6 +22,6 @@
 		 */
 		vm.posts = fireBaseFactory.getPosts();
 
-    }
+	}
 
 })();

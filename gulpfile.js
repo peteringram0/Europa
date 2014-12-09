@@ -33,7 +33,7 @@ var appName = 'europa';
 /**
  * Should match the host file entry
  */
-var hostLocation = 'europa.dev';
+var hostLocation = 'http://europa.dev';
 
 /**
  * Used by browser sync to trigger page reloads
@@ -212,12 +212,14 @@ gulp.task('watch', ['browser-sync'], function(){
 });
 
 /**
- * Browser-sync setup task
+ * Dont know why but going though a proxy has issues at the moment :S
  */
 gulp.task('browser-sync', function() {
-  browserSync.init(null, {
-    proxy: hostLocation
-  });
+    browserSync({
+        server: {
+            baseDir: "./dist"
+        }
+    });
 });
 
 /**
