@@ -1,13 +1,13 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.controllers')
-        .controller('admin', admin);
+	angular
+		.module('app.controllers')
+		.controller('admin', admin);
 
 	admin.$inject = ['fireBaseFactory', 'SweetAlert'];
 
-    function admin(fireBaseFactory, SweetAlert) {
+	function admin(fireBaseFactory, SweetAlert) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -29,6 +29,6 @@
 			fireBaseFactory.publishPost(post);
 		};
 
-    }
+	}
 
 })();

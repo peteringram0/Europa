@@ -1,13 +1,13 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.controllers')
-        .controller('wrapper', wrapper);
+	angular
+		.module('app.controllers')
+		.controller('wrapper', wrapper);
 
 	wrapper.$inject = ['fireBaseFactory', '$modal', '$state', 'SweetAlert'];
 
-    function wrapper(fireBaseFactory, $modal, $state, SweetAlert) {
+	function wrapper(fireBaseFactory, $modal, $state, SweetAlert) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -21,10 +21,10 @@
 
 		vm.authModal = function() {
 			var modalInstance = $modal.open({
-		    	templateUrl: 'wrapper/auth/auth.tpl.html',
-		      	controller: 'authController',
-		    });
-		    //status();
+				templateUrl: 'wrapper/auth/auth.tpl.html',
+				controller: 'authController',
+			});
+			//status();
 		};
 
 		vm.logout = function() {
@@ -38,6 +38,6 @@
 			vm.status = fireBaseFactory.checkStatus();
 		}
 
-    }
+	}
 
 })();
