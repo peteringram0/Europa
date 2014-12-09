@@ -1,28 +1,31 @@
-<div id="sidebar" sticky offset="20">
+<div offset="20">
 
 	<img class="profilePic hidden-xs" gravatar-src="email">
 
 	<ul class="nav nav-pills nav-stacked">
 		<li ng-repeat="item in menu">
-			<a href="{{item.location}}">
+			<a class="btn btn-primary" href="{{item.location}}">
 				<i class="{{item.class}}"></i>
 				<span>{{item.title}}</span>
 			</a>
 		</li>
 
-		<li ng-if="authStatus === false" ng-click="loginFun()"><a href="#"><i class="fa fa-key"></i> <span>Login</span></a></li>
+		<li ng-if="authStatus === false" ng-click="loginFun()"><a class="btn btn-primary" href="#"><i class="fa fa-key"></i> <span>Login</span></a></li>
 
-		<li ng-if="authStatus === true"><a href="/e-admin"><i class="fa fa-user"></i> <span>Admin</span></a></li>
+		<li ng-if="authStatus === true"><a class="btn btn-primary" href="/e-admin"><i class="fa fa-user"></i> <span>Admin</span></a></li>
 
-		<li ng-if="authStatus === true" ng-click="logoutFun()"><a href="#"><i class="fa fa-lock"></i> <span>Logout</span></a></li>
+		<li ng-if="authStatus === true" ng-click="logoutFun()"><a class="btn btn-primary" href="#"><i class="fa fa-lock"></i> <span>Logout</span></a></li>
+
+		<li ng-click="isCollapsed = !isCollapsed"><a class="btn btn-primary" href="#"><i class="fa fa-cubes"></i> <span>Categories</span></a></li>
 
 	</ul>
 
-
-<button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
-
-	<div collapse="isCollapsed">
-		<div>Some content</div> 
+	<div collapse="!isCollapsed">
+		<ul>
+			<li><button type="button" class="btn btn-info">Extra 1</button></li>
+			<li><button type="button" class="btn btn-info">Extra 2</button></li>
+			<li><button type="button" class="btn btn-info">Extra 3</button></li>
+		</ul>
 	</div>
 
 </div>
