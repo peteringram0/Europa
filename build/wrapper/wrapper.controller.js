@@ -13,9 +13,9 @@
 		var vm = this;
 
 		/**
-		 * Bind the Menu to the wrapper controller
+		 * Bind the Config to the wrapper controller
 		 */
-		vm.menu = fireBaseFactory.getMenu();
+		vm.config = fireBaseFactory.getConfig();
 
 		status();
 
@@ -24,7 +24,6 @@
 				templateUrl: 'wrapper/auth/auth.tpl.html',
 				controller: 'authController',
 			});
-			//status();
 		};
 
 		vm.logout = function() {

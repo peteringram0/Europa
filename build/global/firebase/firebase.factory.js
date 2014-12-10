@@ -17,7 +17,7 @@
 
 		var service = {
 			// Site
-			getMenu: getMenu,
+			getConfig: getConfig, 
 
 			// Posts
 			getPosts: getPosts,
@@ -33,14 +33,14 @@
 		};
 
 		return service;
-		
+
 		/**
-		 * Get the applications menu from firebase
+		 * Returns the config object within firebase (contains menu)
 		 */
-		function getMenu() {
-			var ref = new Firebase(config.firebaseURL+'/menu');
+		function getConfig() {
+			var ref = new Firebase(config.firebaseURL+'/config');
 			var sync = $firebase(ref);
-			return sync.$asArray();
+			return sync.$asObject();
 		}
 
 		/**
@@ -94,6 +94,9 @@
 			ref.unauth();
 		}
 
+		/**
+		 * Returns true or false based on if the user is logged in
+		 */
 		function checkStatus() {
 			var ref = new Firebase(config.firebaseURL);
 
