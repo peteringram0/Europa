@@ -18,9 +18,11 @@
 		vm.background = parallaxHelper.createAnimator(-0.3);
 
 		/**
-		 * Load in the posts
+		 * Load in the post
+		 *
+		 * vm.post is binded directly to the firseBase factory here !
 		 */
-		vm.posts = fireBaseFactory.getPosts();
+		fireBaseFactory.getPost(vm, 'post');
 
 	}
 
