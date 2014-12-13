@@ -18,6 +18,7 @@
 		var directive = {
 			scope: {
 				menu: '=',
+				categories: '=',
 				login: '&',
 				logout: '&',
 				authStatus: '='

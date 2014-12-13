@@ -1,6 +1,6 @@
 <div offset="20">
 
-	<img class="profilePic hidden-xs" gravatar-src="email">
+	<img class="img-circle profilePic hidden-xs" gravatar-src="email">
 
 	<ul class="nav nav-pills nav-stacked">
 		<li ng-repeat="item in menu">
@@ -21,11 +21,9 @@
 	</ul>
 
 	<div collapse="!isCollapsed">
-		<ul>
-			<li><button type="button" class="btn btn-info">Extra 1</button></li>
-			<li><button type="button" class="btn btn-info">Extra 2</button></li>
-			<li><button type="button" class="btn btn-info">Extra 3</button></li>
-		</ul>
+		<div ng-repeat="cat in categories">
+			<button type="button" class="btn btn-primary" style="margin: 0 5px 5px 0">{{cat}}</button>
+		</div>
 	</div>
 
 </div>
