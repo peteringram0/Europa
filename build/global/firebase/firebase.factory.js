@@ -58,15 +58,19 @@
 		function publishPost(post) {
 			var ref = new Firebase(config.firebaseURL+'/posts');
 			var sync = $firebase(ref);
-			var obj = sync.$asArray();
+			//var obj = sync.$asArray();
+
+			var title = post.title;
 
 			var testObj = {
 				title: post.title,
 				content: post.content,
-				date: Firebase.ServerValue.TIMESTAMP
+				date: Firebase.ServerValue.TIMESTAMP,
+				categorie: post.categorie
 			};
 
-			obj.$add(testObj);
+			ref.child(post.title).set(testObj);
+
 		}
 
 		/**

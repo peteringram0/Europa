@@ -27,6 +27,7 @@
 		 */
 		vm.publishPost = function(post) {
 			fireBaseFactory.publishPost(post);
+			SweetAlert.swal("Posted", "", "success");
 		};
 
 		/**
