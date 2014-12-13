@@ -11,9 +11,9 @@
 	<hr/>
 
 	<h4>Categorie</h4>
-	<select name="cat" class="form-control" required>
+	<select ng-model="post.categorie" class="form-control" required>
 		<option value="">- Please Select -</option>
-		<option ng-repeat="cat in config.categories" name="{{cat}}" value="{{cat}}">{{cat}}</option>
+		<option ng-repeat="cat in config.categories" value="{{cat}}">{{cat}}</option>
 	</select>
 
 	<hr/>
