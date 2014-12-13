@@ -9,7 +9,8 @@
 		
 		var directive = {
 			scope: {
-				publish: '&'
+				publish: '&',
+				config: '='
 			},
 			link: link,
 			templateUrl: 'global/post/post.tpl.html',
@@ -26,9 +27,13 @@
 			/* jshint validthis: true */
 			var vm = scope;
 
-			vm.submitPost = function() {
-				scope.publish()(scope.post);
+			vm.submitPost = function(valid) {
+				if(valid){
+					scope.publish()(scope.post);
+				}
 			};
+
+			vm.config = scope.config;
 
 
 		}

@@ -1,12 +1,23 @@
+<form name="postForm" ng-submit="submitPost(postForm.$valid)">
 
-<input type="text" class="form-control" placeholder="Post Title" ng-model="post.title" required>
+	<input name="title" type="text" class="form-control" placeholder="Post Title" ng-model="post.title" required>
 
-<br/>
+	<hr/>
 
-<div style="text-align:left"> 
-	<text-angular ng-model="post.content" ta-toolbar="[['h1','h2','h3'],['bold','italics','quote'],['undo','redo'],['justifyLeft','justifyCenter','justifyRight'],['insertImage','insertLink','insertVideo'],['html']]"></text-angular>
-</div>
+	<div style="text-align:left"> 
+		<text-angular ng-model="post.content" ta-toolbar="[['h1','h2','h3'],['bold','italics','quote'],['undo','redo'],['justifyLeft','justifyCenter','justifyRight'],['insertImage','insertLink','insertVideo'],['html']]"></text-angular>
+	</div>
 
-<br/>
+	<hr/>
 
-<button type="button" class="btn btn-primary" ng-click="submitPost()">Publish Post!</button>
+	<h4>Categorie</h4>
+	<select name="cat" class="form-control" required>
+		<option value="">- Please Select -</option>
+		<option ng-repeat="cat in config.categories" name="{{cat}}" value="{{cat}}">{{cat}}</option>
+	</select>
+
+	<hr/>
+
+	<button type="submit" class="btn btn-primary" ng-disabled="postForm.$pristine || postForm.$invalid">Publish Post!</button>
+
+</form>

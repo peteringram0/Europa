@@ -16,10 +16,8 @@
 		$scope.auth = function(){
 			fireBaseFactory.login($scope.credentials)
 			.then(function(authData) {
-				//SweetAlert.swal({title: "Logged In"}, function(){
-					$modalInstance.dismiss('cancel');
-					$state.go('wrapper.admin');
-				//});
+				$modalInstance.dismiss('cancel');
+				$state.go('wrapper.admin');
 			})
 			.catch(function(error) {
 				SweetAlert.swal("Authentication failed", "Please try again", "error");

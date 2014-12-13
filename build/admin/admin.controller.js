@@ -29,6 +29,11 @@
 			fireBaseFactory.publishPost(post);
 		};
 
+		/**
+		 * Bind the Config to the wrapper controller
+		 */
+		vm.config = fireBaseFactory.getConfig();
+
 	}
 
 })();
