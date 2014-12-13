@@ -21,6 +21,7 @@
 
 			// Posts
 			getPosts: getPosts,
+			getPost: getPost,
 			publishPost: publishPost,
 
 			// Admin
@@ -53,6 +54,27 @@
 		}
 
 		/**
+		 * Pass in the viewModel and a key to bind to and this gets bound directly back into the
+		 * controller. This function will return the latest post in the database at the moment
+ 	 	*/
+		function getPost(vm, key) {
+			var ref = new Firebase(config.firebaseURL+'/posts');
+			ref.orderByChild("date").limitToLast(1).on("child_added", function(snapshot) {
+				returnPost(snapshot.key(), vm, key);
+			});
+		}
+		
+		/**
+		 * After we know the ID of the latest post lets bind it to the VM here
+		 */
+		function returnPost(snapshotKey, vm, key) {
+			var ref = new Firebase(config.firebaseURL+'/posts/'+snapshotKey);
+			var sync = $firebase(ref);
+			vm[key] = sync.$asObject();
+		}
+
+
+		/**
 		 * Send the new post to firebase to be stored
 		 */
 		function publishPost(post) {
@@ -69,8 +91,7 @@
 				categorie: post.categorie
 			};
 
-			ref.child(post.title).set(testObj);
-
+			sync.$set(post.title, testObj);
 		}
 
 		/**

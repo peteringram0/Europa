@@ -13,7 +13,7 @@
 				config: '='
 			},
 			link: link,
-			templateUrl: 'global/post/post.tpl.html',
+			templateUrl: 'global/post/directives/post/post.tpl.html',
 			restrict: 'EA'
 		};
 
