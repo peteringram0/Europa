@@ -77,9 +77,8 @@ gulp.task('vendorstyles', function() {
   return gulp.src('build/styles/vendor.scss')
     .pipe(sass({
       includePaths: [
-        bower + '/bootstrap-sass-official/assets/stylesheets',
         bower + '/fontawesome/scss',
-        bower + '/sweetalert/lib',
+        bower + '/sweetalert/lib'
       ]
     }))
     .on('error', notify.onError(function(error){
@@ -167,6 +166,15 @@ gulp.task('images', function(){
   	.pipe(gulp.dest(target));
 });
 
+
+/**
+ * Moves material design css
+ */
+gulp.task('materialDesign', function(){
+  gulp.src([bower+'/angular-material/angular-material.css'])
+  	.pipe(gulp.dest(target+'/css'));
+});
+
 /**
  * Move firebase config file to dist for firebase hosting deployments
  */
@@ -196,7 +204,7 @@ gulp.task('concatbower', function(){
  * Runs the clean task first then runs everything needed to build up that target directory
  */
 gulp.task('everything', ['clean'], function() {
-  gulp.start('htaccess', 'concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts', 'firebase');
+  gulp.start('htaccess', 'concatbower', 'styles', 'scripts', 'images', 'html', 'vendorstyles', 'fonts', 'firebase', 'materialDesign');
 });
 
 /**
@@ -216,9 +224,7 @@ gulp.task('watch', ['browser-sync'], function(){
  */
 gulp.task('browser-sync', function() {
     browserSync({
-        server: {
-            baseDir: "./dist"
-        }
+        proxy: hostLocation
     });
 });
 

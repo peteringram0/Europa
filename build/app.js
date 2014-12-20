@@ -18,13 +18,13 @@
 			'partials',
 			'ngStorage',
 			'firebase',
-			'ui.bootstrap',
 			'duScroll',
 			'duParallax',
 			'ui.gravatar',
 			'ngSanitize',
 			'textAngular',
-			'oitozero.ngSweetAlert'
+			'oitozero.ngSweetAlert',
+			'ngMaterial'
 		]);
 
 	/**

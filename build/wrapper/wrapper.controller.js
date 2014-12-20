@@ -5,9 +5,9 @@
 		.module('app.controllers')
 		.controller('wrapper', wrapper);
 
-	wrapper.$inject = ['fireBaseFactory', '$modal', '$state', 'SweetAlert'];
+	wrapper.$inject = ['fireBaseFactory', '$state', 'SweetAlert'];
 
-	function wrapper(fireBaseFactory, $modal, $state, SweetAlert) {
+	function wrapper(fireBaseFactory, $state, SweetAlert) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -20,10 +20,12 @@
 		status();
 
 		vm.authModal = function() {
+			/*
 			var modalInstance = $modal.open({
 				templateUrl: 'wrapper/auth/auth.tpl.html',
 				controller: 'authController',
 			});
+			*/
 		};
 
 		vm.logout = function() {
