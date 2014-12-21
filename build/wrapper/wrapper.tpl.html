@@ -1,15 +1,16 @@
-<div class="container-fluid">
+<div layout="row">
 
-	<div class="row-fluid">
+	<div flex="20">
+		<left-bar id="sidebar" auth-status="wrapper.status" menu="wrapper.config.menu" login="wrapper.authModal()" logout="wrapper.logout()" categories="wrapper.config.categories"></left-bar>
+	</div>
 
-		<div class="hidden-xs col-sm-3 col-lg-2 well fix">
-			<left-bar id="sidebar" auth-status="wrapper.status" menu="wrapper.config.menu" login="wrapper.authModal()" logout="wrapper.logout()" categories="wrapper.config.categories"></left-bar>
-		</div>
+	<div flex>
 
-		<div class="col-xs-12 col-sm-9 col-lg-10 fix">
-			<div ui-view></div>
-		</div>
-		
+		<md-button ng-click="wrapper.toggleLeft()" class="md-primary" hide-gt-md>
+            Toggle left
+          </md-button>
+
+		<div ui-view></div>
 	</div>
 
 </div>

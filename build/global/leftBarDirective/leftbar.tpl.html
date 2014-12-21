@@ -1,6 +1,7 @@
+<!--
 <div offset="20">
 
-	<img class="img-circle profilePic hidden-xs" gravatar-src="email">
+	<img style="width:100%; height: auto;" gravatar-src="email">
 
 	<ul class="nav nav-pills nav-stacked">
 		<li ng-repeat="item in menu">
@@ -26,4 +27,29 @@
 		</div>
 	</div>
 
+</div>
+-->
+
+
+
+
+<div layout="column" layout-fill>
+  <section layout="row" flex="100">
+
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide-md show-gt-md>
+          This sidenav is locked open on your device. To go back to the default behavior,
+          narrow your display.
+        </p>
+      </md-content>
+    </md-sidenav>
+
+  </section>
 </div>

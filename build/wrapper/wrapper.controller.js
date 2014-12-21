@@ -5,9 +5,9 @@
 		.module('app.controllers')
 		.controller('wrapper', wrapper);
 
-	wrapper.$inject = ['fireBaseFactory', '$state', 'SweetAlert'];
+	wrapper.$inject = ['fireBaseFactory', '$state', 'SweetAlert', '$mdSidenav'];
 
-	function wrapper(fireBaseFactory, $state, SweetAlert) {
+	function wrapper(fireBaseFactory, $state, SweetAlert, $mdSidenav) {
 		
 		/* jshint validthis: true */
 		var vm = this;
@@ -34,6 +34,11 @@
 			 status();
 			 $state.go('otherwise');
 		};
+
+		vm.toggleLeft = function() {
+			$mdSidenav('left').toggle();
+		};
+
 
 		function status() {
 			vm.status = fireBaseFactory.checkStatus();

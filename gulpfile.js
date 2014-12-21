@@ -61,11 +61,11 @@ var onError = function(err) {
  */
 gulp.task('styles', function() {
   return gulp.src('build/styles/styles.scss')
-    .pipe(sass({ style: 'expanded' }))
-    .pipe(gulp.dest(target+'/css'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
-    .pipe(gulp.dest(target+'/css'));
+	.pipe(sass({ style: 'expanded' }))
+	.pipe(gulp.dest(target+'/css'))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(minifycss())
+	.pipe(gulp.dest(target+'/css'));
 });
 
 /**
@@ -75,19 +75,19 @@ gulp.task('styles', function() {
  */
 gulp.task('vendorstyles', function() {
   return gulp.src('build/styles/vendor.scss')
-    .pipe(sass({
-      includePaths: [
-        bower + '/fontawesome/scss',
-        bower + '/sweetalert/lib'
-      ]
-    }))
-    .on('error', notify.onError(function(error){
-      return 'Error: '+error.message;
-    }))
-    .pipe(gulp.dest(target+'/css'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
-    .pipe(gulp.dest(target+'/css'));
+	.pipe(sass({
+	  includePaths: [
+		bower + '/fontawesome/scss',
+		bower + '/sweetalert/lib'
+	  ]
+	}))
+	.on('error', notify.onError(function(error){
+	  return 'Error: '+error.message;
+	}))
+	.pipe(gulp.dest(target+'/css'))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(minifycss())
+	.pipe(gulp.dest(target+'/css'));
 });
 
 /**
@@ -95,7 +95,7 @@ gulp.task('vendorstyles', function() {
  */
 gulp.task('fonts', function() { 
   return gulp.src(bower + '/fontawesome/fonts/**.*') 
-    .pipe(gulp.dest(target+'/fonts')); 
+	.pipe(gulp.dest(target+'/fonts')); 
 });
 
 /**
@@ -103,7 +103,7 @@ gulp.task('fonts', function() { 
  */
 gulp.task('htaccess', function() { 
   return gulp.src('build/.htaccess') 
-    .pipe(gulp.dest(target)); 
+	.pipe(gulp.dest(target)); 
 });
 
 /**
@@ -111,21 +111,21 @@ gulp.task('htaccess', function() { 
  */
 gulp.task('scripts', function() {
   return gulp.src(['build/**/*.js', '!build/**/*.test.js'])
-    .pipe(order([
-      'app.js',
-      '**/*.js'
-    ]), {base: 'build/'})
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(plumber({
-        errorHandler: onError
-    }))
-    .pipe(concat(appName+'.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(uglify({ mangle: true }))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(target+'/js'))
-    .pipe(browserSync.reload({stream:true}));
+	.pipe(order([
+	  'app.js',
+	  '**/*.js'
+	]), {base: 'build/'})
+	.pipe(jshint())
+	.pipe(jshint.reporter('jshint-stylish'))
+	.pipe(plumber({
+		errorHandler: onError
+	}))
+	.pipe(concat(appName+'.js'))
+	.pipe(gulp.dest('dist/js'))
+	.pipe(uglify({ mangle: true }))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest(target+'/js'))
+	.pipe(browserSync.reload({stream:true}));
 });
 
 /**
@@ -141,20 +141,20 @@ gulp.task('html',function(){
    * All .tpl files
    */
   gulp.src("build/**/*.tpl.html")
-    .pipe(ngHtml2Js({
-      moduleName: "partials"
-    }))
-    .pipe(concat("partials.js"))
-    .pipe(gulp.dest("./dist/partials"))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest("./dist/partials"));
+	.pipe(ngHtml2Js({
+	  moduleName: "partials"
+	}))
+	.pipe(concat("partials.js"))
+	.pipe(gulp.dest("./dist/partials"))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(uglify())
+	.pipe(gulp.dest("./dist/partials"));
 
   /**
    * Move the main index.html page
    */
   gulp.src('./build/index.html')
-    .pipe(gulp.dest(target));
+	.pipe(gulp.dest(target));
 
 });
 
@@ -163,7 +163,7 @@ gulp.task('html',function(){
  */
 gulp.task('images', function(){
   gulp.src('./build/images/**/*.*')
-  	.pipe(gulp.dest(target));
+	.pipe(gulp.dest(target));
 });
 
 
@@ -172,7 +172,7 @@ gulp.task('images', function(){
  */
 gulp.task('materialDesign', function(){
   gulp.src([bower+'/angular-material/angular-material.css'])
-  	.pipe(gulp.dest(target+'/css'));
+	.pipe(gulp.dest(target+'/css'));
 });
 
 /**
@@ -181,11 +181,11 @@ gulp.task('materialDesign', function(){
 gulp.task('firebase', function(){
   // Move over config file
   gulp.src('./build/firebase.json')
-    .pipe(gulp.dest(target));
+	.pipe(gulp.dest(target));
 
   // move over db seed file
   gulp.src('./firebase_seed.json')
-    .pipe(gulp.dest(target));
+	.pipe(gulp.dest(target));
 });
 
 /**
@@ -194,10 +194,10 @@ gulp.task('firebase', function(){
  */
 gulp.task('concatbower', function(){
   return gulp.src(bowerFiles.js)
-    .pipe(concat('vendor.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(target+'/js'))
-    .pipe(browserSync.reload({stream:true}));
+	.pipe(concat('vendor.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest(target+'/js'))
+	.pipe(browserSync.reload({stream:true}));
 });
 
 /**
@@ -223,9 +223,9 @@ gulp.task('watch', ['browser-sync'], function(){
  * Dont know why but going though a proxy has issues at the moment :S
  */
 gulp.task('browser-sync', function() {
-    browserSync({
-        proxy: hostLocation
-    });
+	browserSync.init(null, {
+		proxy: hostLocation
+	});
 });
 
 /**

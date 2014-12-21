@@ -5,7 +5,7 @@
 		.module('app.directive')
 		.directive('leftBar', leftBar);
 	
-	leftBar.$inject = ['config'];
+	leftBar.$inject = ['config', '$mdSidenav'];
 
 	/**
 	 * The left bar is used as a blog default. This is responsable for the left bar of the page
@@ -13,7 +13,7 @@
 	 * 
 	 * @author Peter Ingram <peter.ingram0@gmail.com>
 	 */
-	function leftBar(config) {
+	function leftBar(config, $mdSidenav) {
 		
 		var directive = {
 			scope: {
@@ -44,6 +44,12 @@
 			scope.logoutFun = function(){
 				scope.logout();
 			};
+
+
+			scope.toggleLeft = function() {
+				$mdSidenav('left').toggle();
+			};
+
 
 		}
 
